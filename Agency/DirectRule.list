@@ -15,3 +15,7 @@ DOMAIN-SUFFIX,qq.com
 
 # 抖音
 DOMAIN-SUFFIX,amemv.com
+
+#拼多多
+DOMAIN-SUFFIX,pinduoduo.com
+DOMAIN-SUFFIX,pddpic.com
