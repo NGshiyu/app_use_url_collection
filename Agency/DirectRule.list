@@ -20,5 +20,8 @@ DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,pinduoduo.com
 DOMAIN-SUFFIX,pddpic.com
 
+# 有赞
+DOMAIN-SUFFIX,youzan.com
+
 #My Server
 DOMAIN-SUFFIX,ngshiyu.ccwu.cc
