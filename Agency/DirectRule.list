@@ -25,3 +25,6 @@ DOMAIN-SUFFIX,youzan.com
 
 #My Server
 DOMAIN-SUFFIX,ngshiyu.ccwu.cc
+
+# CN
+URL-REGEX,^https?:\/\/([^/]*\.)?cn(\.|:|/|$)
