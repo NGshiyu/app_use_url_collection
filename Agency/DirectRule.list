@@ -28,3 +28,6 @@ DOMAIN-SUFFIX,ngshiyu.ccwu.cc
 
 # CN
 URL-REGEX,^https?:\/\/([^/]*\.)?cn(\.|:|/|$)
+
+#iTab
+DOMAIN-SUFFIX,go.itab.link
