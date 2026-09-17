@@ -1,9 +1,11 @@
 # CN禁用的大模型和应用等内容
 # Apple Intelligence
-DOMAIN-KEYWORD,apple-relay.apple.com
-DOMAIN-KEYWORD,guzzoni.smoot.apple.com
-DOMAIN-KEYWORD,guzzoni.apple.com
-DOMAIN-KEYWORD,amp-api-search-edge.apple.com
+DOMAIN,guzzoni.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,cp4.cloudflare.com
+DOMAIN,apple-relay.apple.com
 
 # Apple Components
 DOMAIN-SUFFIX,podcasts.apple.com
