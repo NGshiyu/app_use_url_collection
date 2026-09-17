@@ -1,11 +1,16 @@
 # CN禁用的大模型和应用等内容
 # Apple Intelligence
-DOMAIN,guzzoni.apple.com
-DOMAIN-SUFFIX,smoot.apple.com
-DOMAIN,apple-relay.cloudflare.com
 DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,apple-relay.cloudflare.com
 DOMAIN,cp4.cloudflare.com
 DOMAIN,apple-relay.apple.com
+DOMAIN,gspe1-ssl.ls.apple.com
+DOMAIN,guzzoni.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
+DOMAIN-SUFFIX,apple-relay.akamaized.net
+DOMAIN-KEYWORD,apple-relay
+DOMAIN,apple-carry-relay.cloudflare.com
 
 # Apple Components
 DOMAIN-SUFFIX,podcasts.apple.com
