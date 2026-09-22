@@ -17,10 +17,6 @@ DOMAIN-KEYWORD,tmobile
 # FirstTrade
 DOMAIN-SUFFIX,firstrade.com
 
-# Apple News
-# DOMAIN-SUFFIX,news.apple.com
-# AND,((DOMAIN-SUFFIX,apple.com),(DOMAIN-KEYWORD,news))
-# DOMAIN,gspe1-ssl.ls.apple.com
 
 # Apple Components
 DOMAIN-SUFFIX,podcasts.apple.com
