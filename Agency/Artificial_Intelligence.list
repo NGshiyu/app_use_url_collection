@@ -18,14 +18,7 @@ DOMAIN,gateway.icloud.com
 DOMAIN,probe.icloud.com
 DOMAIN,metrics.icloud.com
 
-# Apple Components
-DOMAIN-SUFFIX,podcasts.apple.com
 
-# Digital Currency
-DOMAIN-SUFFIX,binance.com
-
-# Communication
-DOMAIN-SUFFIX,helium.com
 
 # Google Gemini
 DOMAIN-SUFFIX,googleapis.com
