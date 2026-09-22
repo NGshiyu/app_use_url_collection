@@ -1,6 +1,7 @@
 # CN禁用的大模型和应用等内容
 # Apple Intelligence / Siri / Relay rules
-# Route these domains to a supported-region proxy group, such as a US node.DOMAIN,guzzoni.apple.com
+# Route these domains to a supported-region proxy group, such as a US node.
+DOMAIN,guzzoni.apple.com
 DOMAIN-SUFFIX,smoot.apple.com
 DOMAIN,api-siri-prod.apple.com
 DOMAIN,seed.siri.apple.com
