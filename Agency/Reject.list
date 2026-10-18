@@ -1,0 +1,5 @@
+# 以下的域名代理到Local本地
+# Nik Collection 9
+DOMAIN-SUFFIX,api-ls.services.dxo.com
+DOMAIN-SUFFIX,api.licensespring.com
+DOMAIN-SUFFIX,activation.dxo.com
