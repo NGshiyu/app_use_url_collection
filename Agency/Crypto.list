@@ -8,65 +8,91 @@
 # Enable those lines yourself only if you have confirmed them.
 #
 # Requires Loon build 1008+ for DOMAIN-WILDCARD.
-# Replace "proxy" with your actual policy group name.
-# Place these ABOVE generic GEOIP/DIRECT rules so they are not shadowed.
+# The policy is not part of the rules; it is set where this rule set is referenced.
 #
 # NOTE on wildcards: "brand.*" matches any host that STARTS with "brand." and
 # "*.brand.*" any host containing ".brand.", so lookalikes such as brand.attacker.com
-# also match. It only routes traffic via the proxy, but it is not a strict ownership check.
+# also match. It only routes traffic via the policy, but it is not a strict ownership check.
 # Wildcards are kept for brands whose country TLDs you want covered.
-
 
 # ============================================================
 # Binance
 # ============================================================
 DOMAIN-WILDCARD,binance.*
 DOMAIN-WILDCARD,*.binance.*
-DOMAIN-WILDCARD,binancezh.*        # [community] Chinese mirror domains
+# [community] Chinese mirror domains
+DOMAIN-WILDCARD,binancezh.*
 DOMAIN-WILDCARD,*.binancezh.*
-DOMAIN-SUFFIX,bnbstatic.com        # [community] static assets / CDN
-DOMAIN-SUFFIX,bntrace.com          # [community]
-DOMAIN-SUFFIX,bsappapi.com         # [community] app API
-DOMAIN-SUFFIX,saasexch.com         # [community] exchange SaaS backend
-DOMAIN-SUFFIX,saasexch.cc          # [community]
-DOMAIN-SUFFIX,binanceapi.com       # [community]
-DOMAIN-SUFFIX,binancecnt.com       # [community]
-DOMAIN-SUFFIX,binancefuture.com    # [community] blackmatrix7
+# [community] static assets / CDN
+DOMAIN-SUFFIX,bnbstatic.com
+# [community]
+DOMAIN-SUFFIX,bntrace.com
+# [community] app API
+DOMAIN-SUFFIX,bsappapi.com
+# [community] exchange SaaS backend
+DOMAIN-SUFFIX,saasexch.com
+# [community]
+DOMAIN-SUFFIX,saasexch.cc
+# [community]
+DOMAIN-SUFFIX,binanceapi.com
+# [community]
+DOMAIN-SUFFIX,binancecnt.com
+# [community] blackmatrix7
+DOMAIN-SUFFIX,binancefuture.com
 # Related but NOT owned by Binance (enable only if you use them):
-#DOMAIN-SUFFIX,bnbchain.org        # BNB Chain: community-driven, listed by v2fly under binance
+# BNB Chain: community-driven, listed by v2fly under binance
+#DOMAIN-SUFFIX,bnbchain.org
 # Removed: bsc.news (independent media), trustwallet.com (no longer Binance-owned since 2025-05-15)
 # UNVERIFIED:
-#DOMAIN-SUFFIX,binancepay.com      # docs use pay.binance.com / merchant.binance.com
+# docs use pay.binance.com / merchant.binance.com
+#DOMAIN-SUFFIX,binancepay.com
 
 # ============================================================
 # Bitget
 # ============================================================
-DOMAIN-WILDCARD,bitget.*           # bitget.com / .site / .cloud ...
+# bitget.com / .site / .cloud ...
+DOMAIN-WILDCARD,bitget.*
 DOMAIN-WILDCARD,*.bitget.*
-DOMAIN-SUFFIX,bitgetapp.com        # [indirect] loaded by Bitget's own site
-DOMAIN-SUFFIX,bgstatic.com         # [indirect] static assets
-DOMAIN-SUFFIX,bgbstatic.com        # [indirect] static assets
+# [indirect] loaded by Bitget's own site
+DOMAIN-SUFFIX,bitgetapp.com
+# [indirect] static assets
+DOMAIN-SUFFIX,bgstatic.com
+# [indirect] static assets
+DOMAIN-SUFFIX,bgbstatic.com
 # UNVERIFIED:
-#DOMAIN-SUFFIX,bitgetapps.com      # a scan site flagged brand mismatch
+# a scan site flagged brand mismatch
+#DOMAIN-SUFFIX,bitgetapps.com
 #DOMAIN-SUFFIX,bguser.com
 #DOMAIN-SUFFIX,btsgtm.com
 
 # ============================================================
 # Bybit
 # ============================================================
-DOMAIN-WILDCARD,bybit.*            # bybit.com / .io / .biz / .cloud / .tr
+# bybit.com / .io / .biz / .cloud / .tr
+DOMAIN-WILDCARD,bybit.*
 DOMAIN-WILDCARD,*.bybit.*
-DOMAIN-SUFFIX,bytick.com           # [official] api.bytick.com in Bybit API docs
-DOMAIN-SUFFIX,bybitglobal.com      # [community] + loaded by Bybit site
-DOMAIN-SUFFIX,bybit-global.com     # [community] + loaded by Bybit site
-DOMAIN-SUFFIX,bycsi.com            # [community] + loaded by Bybit site
-DOMAIN-SUFFIX,byapis.com           # [community]
-DOMAIN-SUFFIX,bycbe.com            # [community]
-DOMAIN-SUFFIX,bymj.io              # [community]
-DOMAIN-SUFFIX,byabcde.com          # [community]
-DOMAIN-SUFFIX,byapps.net           # [community]
-DOMAIN-SUFFIX,byd3c3.com           # [community]
-DOMAIN-SUFFIX,bybdc6.com           # [community]
+# [official] api.bytick.com in Bybit API docs
+DOMAIN-SUFFIX,bytick.com
+# [community] + loaded by Bybit site
+DOMAIN-SUFFIX,bybitglobal.com
+# [community] + loaded by Bybit site
+DOMAIN-SUFFIX,bybit-global.com
+# [community] + loaded by Bybit site
+DOMAIN-SUFFIX,bycsi.com
+# [community]
+DOMAIN-SUFFIX,byapis.com
+# [community]
+DOMAIN-SUFFIX,bycbe.com
+# [community]
+DOMAIN-SUFFIX,bymj.io
+# [community]
+DOMAIN-SUFFIX,byabcde.com
+# [community]
+DOMAIN-SUFFIX,byapps.net
+# [community]
+DOMAIN-SUFFIX,byd3c3.com
+# [community]
+DOMAIN-SUFFIX,bybdc6.com
 # UNVERIFIED:
 #DOMAIN-SUFFIX,bybitwallet.com
 #DOMAIN-SUFFIX,bybitcdn.com
@@ -75,17 +101,22 @@ DOMAIN-SUFFIX,bybdc6.com           # [community]
 # ============================================================
 # OKX
 # ============================================================
-DOMAIN-WILDCARD,okx.*              # okx.com / .co / .me / .ac ...
+# okx.com / .co / .me / .ac ...
+DOMAIN-WILDCARD,okx.*
 DOMAIN-WILDCARD,*.okx.*
 # Removed: okx.cab (no evidence of OKX ownership; a phishing database lists web3.okx.cab)
 # Note: okx.* still matches okx.cab. Replace the wildcards with explicit
 # DOMAIN-SUFFIX,okx.com if you want to exclude it.
 # Related, not confirmed as OKX-owned:
-#DOMAIN-SUFFIX,okcoin.com          # OKCoin is a separate exchange
+# OKCoin is a separate exchange
+#DOMAIN-SUFFIX,okcoin.com
 # UNVERIFIED:
-#DOMAIN-SUFFIX,okex.com            # legacy brand
-#DOMAIN-SUFFIX,xlayer.tech         # X Layer RPC; probably OKX, registrant not verified
-#DOMAIN-SUFFIX,oklink.com          # OKLink explorer; OKX affiliate
+# legacy brand
+#DOMAIN-SUFFIX,okex.com
+# X Layer RPC; probably OKX, registrant not verified
+#DOMAIN-SUFFIX,xlayer.tech
+# OKLink explorer; OKX affiliate
+#DOMAIN-SUFFIX,oklink.com
 #DOMAIN-SUFFIX,okx-dns.com
 #DOMAIN-SUFFIX,okx-dns1.com
 #DOMAIN-SUFFIX,okx-dns2.com
@@ -95,26 +126,32 @@ DOMAIN-WILDCARD,*.okx.*
 # ============================================================
 DOMAIN-WILDCARD,coinbase.*
 DOMAIN-WILDCARD,*.coinbase.*
-DOMAIN-SUFFIX,cb-device-intelligence.com  # [indirect] Netify lists it as a primary Coinbase domain
+# [indirect] Netify lists it as a primary Coinbase domain
+DOMAIN-SUFFIX,cb-device-intelligence.com
 # UNVERIFIED:
 #DOMAIN-SUFFIX,coinbase-statics.com
 #DOMAIN-SUFFIX,cb-analytics.com
 #DOMAIN-SUFFIX,cdnbase.io
 #DOMAIN-SUFFIX,cbhq.net
-#DOMAIN-SUFFIX,cb-w.com            # weak hint: go.cb-w.com linked from Coinbase docs
+# weak hint: go.cb-w.com linked from Coinbase docs
+#DOMAIN-SUFFIX,cb-w.com
 #DOMAIN-SUFFIX,coinbasecloud.net
 #DOMAIN-SUFFIX,coinbasecloud.com
 #DOMAIN-SUFFIX,coinbaseprime.com
 #DOMAIN-SUFFIX,cbase.in
-#DOMAIN-SUFFIX,base.org            # Base L2; broad public domain
+# Base L2; broad public domain
+#DOMAIN-SUFFIX,base.org
 
 # ============================================================
 # Kraken
 # ============================================================
 # No wildcard: kraken.* would also match kraken.tech (Octopus Energy) and kraken.io (image SaaS).
-DOMAIN-SUFFIX,kraken.com           # [official]
-DOMAIN-SUFFIX,payward.com          # [official] parent company
-DOMAIN-SUFFIX,krak.app             # [indirect] Krak app, confirmed as Kraken's app by Kraken support
+# [official]
+DOMAIN-SUFFIX,kraken.com
+# [official] parent company
+DOMAIN-SUFFIX,payward.com
+# [indirect] Krak app, confirmed as Kraken's app by Kraken support
+DOMAIN-SUFFIX,krak.app
 # Removed: krakenflex.com (Octopus Energy), cryptowat.ch (shut down 2023)
 # UNVERIFIED:
 #DOMAIN-SUFFIX,krakenfx.com
@@ -123,8 +160,10 @@ DOMAIN-SUFFIX,krak.app             # [indirect] Krak app, confirmed as Kraken's 
 # ============================================================
 # Gate (formerly Gate.io)
 # ============================================================
-DOMAIN-SUFFIX,gate.io              # [official]
-DOMAIN-SUFFIX,gate.com             # [official] new main domain since 2025-05-19
+# [official]
+DOMAIN-SUFFIX,gate.io
+# [official] new main domain since 2025-05-19
+DOMAIN-SUFFIX,gate.com
 # UNVERIFIED:
 #DOMAIN-SUFFIX,gateio.live
 #DOMAIN-SUFFIX,gatedata.org
@@ -133,9 +172,12 @@ DOMAIN-SUFFIX,gate.com             # [official] new main domain since 2025-05-19
 # ============================================================
 # KuCoin
 # ============================================================
-DOMAIN-SUFFIX,kucoin.com           # [official]
-DOMAIN-SUFFIX,kucoin.io            # [official] 2020 multi-domain announcement
-DOMAIN-SUFFIX,kucoin.cc            # [official] 2020 multi-domain announcement
+# [official]
+DOMAIN-SUFFIX,kucoin.com
+# [official] 2020 multi-domain announcement
+DOMAIN-SUFFIX,kucoin.io
+# [official] 2020 multi-domain announcement
+DOMAIN-SUFFIX,kucoin.cc
 # Stale, not kept: kumex.com (futures brand renamed to KuCoin Futures in 2020)
 # UNVERIFIED:
 #DOMAIN-SUFFIX,kucoin.plus
@@ -144,19 +186,24 @@ DOMAIN-SUFFIX,kucoin.cc            # [official] 2020 multi-domain announcement
 # MEXC
 # ============================================================
 DOMAIN-SUFFIX,mexc.com
-DOMAIN-SUFFIX,mexc.co              # [indirect] scan site lists MEXC as operator
+# [indirect] scan site lists MEXC as operator
+DOMAIN-SUFFIX,mexc.co
 # UNVERIFIED:
 #DOMAIN-SUFFIX,mexcm.com
 
 # ============================================================
 # HTX (formerly Huobi)
 # ============================================================
-DOMAIN-SUFFIX,htx.com              # [official]
-DOMAIN-SUFFIX,huobi.com            # [official] legacy domain, acquired by Huobi in 2013
-DOMAIN-SUFFIX,hbg.com              # Wikipedia lists www.hbg.com as the exchange site
+# [official]
+DOMAIN-SUFFIX,htx.com
+# [official] legacy domain, acquired by Huobi in 2013
+DOMAIN-SUFFIX,huobi.com
+# Wikipedia lists www.hbg.com as the exchange site
+DOMAIN-SUFFIX,hbg.com
 # UNVERIFIED:
 #DOMAIN-SUFFIX,hbfile.net
-#DOMAIN-SUFFIX,huobi.global        # mentioned in a review, not confirmed
+# mentioned in a review, not confirmed
+#DOMAIN-SUFFIX,huobi.global
 
 # ============================================================
 # Crypto.com
