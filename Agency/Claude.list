@@ -9,3 +9,4 @@ DOMAIN-KEYWORD,claude
 
 # 覆盖 Claude 主进程、Claude Helper 和 Renderer Helper
 PROCESS-NAME,/Applications/Claude.app/,美国时延优选
+PROCESS-NAME,/Applications/Claude.app/*,美国时延优选
