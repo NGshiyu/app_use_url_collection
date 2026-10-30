@@ -11,4 +11,4 @@ DOMAIN-KEYWORD,claude
 PROCESS-NAME,/Applications/Claude.app/*,美国时延优选
 PROCESS-NAME,*claude*,美国时延优选
 /Users/ngshiyu/.local/bin/claude
-PROCESS-NAME,/Users/ngshiyu/.local/bin/claude*,美国时延优选
+PROCESS-NAME,*/claude*,美国时延优选
