@@ -1,0 +1,38 @@
+# Bybit rules for Loon
+# Policy group: Crypto_Bybit = select, 英国时延优选, 德国时延优选, 阿联酋时延优选, 土耳其时延优选
+# Card basis (Bybit's own "Card countries 2026" page, updated 2026-06): Mastercard, supported in
+#   UK (since 2026-06), all EEA countries (Germany included), UAE, Turkey (virtual card only),
+#   plus Switzerland, Brazil, Mexico, Argentina and others (no matching policy group at the moment).
+# Not supported (per the same page): Singapore, Japan, US, Canada, China, Vietnam, Australia, India, Philippines.
+#   Nigeria and Pakistan are not issued cards either.
+# Requires Loon build 1008+ for DOMAIN-WILDCARD.
+
+DOMAIN-WILDCARD,bybit.*
+DOMAIN-WILDCARD,*.bybit.*
+# [official] api.bytick.com in Bybit API docs
+DOMAIN-SUFFIX,bytick.com
+# [community] + loaded by Bybit site
+DOMAIN-SUFFIX,bybitglobal.com
+# [community] + loaded by Bybit site
+DOMAIN-SUFFIX,bybit-global.com
+# [community] + loaded by Bybit site
+DOMAIN-SUFFIX,bycsi.com
+# [community]
+DOMAIN-SUFFIX,byapis.com
+# [community]
+DOMAIN-SUFFIX,bycbe.com
+# [community]
+DOMAIN-SUFFIX,bymj.io
+# [community]
+DOMAIN-SUFFIX,byabcde.com
+# [community]
+DOMAIN-SUFFIX,byapps.net
+# [community]
+DOMAIN-SUFFIX,byd3c3.com
+# [community]
+DOMAIN-SUFFIX,bybdc6.com
+
+# UNVERIFIED:
+#DOMAIN-SUFFIX,bybitwallet.com
+#DOMAIN-SUFFIX,bybitcdn.com
+#DOMAIN-SUFFIX,bybitstorage.com

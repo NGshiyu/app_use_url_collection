@@ -1,0 +1,27 @@
+# OKX rules for Loon
+# Policy group: Crypto_OKX = select, 新国时延优选, 德国时延优选, 美国时延优选, 尼日利亚时延优选, 巴基斯坦时延优选
+# Card basis (re-checked 2026-11-01, OKX official pages):
+#   Singapore -> OKX Card, Visa Platinum debit (OKX SG Pte Ltd)                okx.com/en-eu/learn/best-crypto-card-singapore
+#   EEA (EU + Norway; Iceland/Liechtenstein excluded) -> Mastercard, 2026-01-28 okx.com/en-us/learn/okx-card-eea-fees-rewards-eligibility
+#   US (all states except MA, NY and territories) -> updated 2026-10-28         okx.com/en-us/help/us-okx-card-who-can-apply-for-the-okx-card-and-how-do-i-apply
+#   Africa: Ghana, Nigeria, Uganda, Rwanda, South Africa -> launched 2026-07-22 okx.com/en-eu/learn/okx-crypto-card-africa
+#   South Asia: Pakistan -> launched 2026-07-22                                 okx.com/en-eu/learn/okx-crypto-card-south-asia
+#   Also Brazil, Australia (no matching policy group enabled).
+# Not offered / restricted: UK, HK, JP, MY (OKX restricted list), TW, VN, TR, AE, UA (no official card page found).
+# Requires Loon build 1008+ for DOMAIN-WILDCARD.
+#
+# NOTE: okx.* also matches okx.cab and lookalikes such as okx.attacker.com.
+# It only picks the policy, it is not an ownership check. Use DOMAIN-SUFFIX,okx.com if you want it strict.
+
+DOMAIN-WILDCARD,okx.*
+DOMAIN-WILDCARD,*.okx.*
+
+# Related, not confirmed as OKX-owned:
+#DOMAIN-SUFFIX,okcoin.com
+# UNVERIFIED:
+#DOMAIN-SUFFIX,okex.com
+#DOMAIN-SUFFIX,xlayer.tech
+#DOMAIN-SUFFIX,oklink.com
+#DOMAIN-SUFFIX,okx-dns.com
+#DOMAIN-SUFFIX,okx-dns1.com
+#DOMAIN-SUFFIX,okx-dns2.com

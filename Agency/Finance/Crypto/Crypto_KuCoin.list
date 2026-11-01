@@ -1,0 +1,16 @@
+# KuCoin rules for Loon
+# Policy: set directly to 德国时延优选 (only one matching region, no select group needed)
+# Card basis (checked 2026-10-31): KuCard, Visa in the EEA (Germany covered) and Brazil;
+#   Mastercard in Australia / New Zealand. Of your policy groups only 德国 matches.
+# Not offered in: UK, US, SG, TW, JP, HK, VN, TR, AE, MY, NG, UA, PK.
+# If you enable 澳洲时延优选 / 巴西时延优选 later, create Crypto_KuCoin = select, 德国时延优选, 澳洲时延优选, 巴西时延优选.
+
+# [official]
+DOMAIN-SUFFIX,kucoin.com
+# [official] 2020 multi-domain announcement
+DOMAIN-SUFFIX,kucoin.io
+# [official] 2020 multi-domain announcement
+DOMAIN-SUFFIX,kucoin.cc
+# Stale, not kept: kumex.com (futures brand renamed to KuCoin Futures in 2020)
+# UNVERIFIED:
+#DOMAIN-SUFFIX,kucoin.plus

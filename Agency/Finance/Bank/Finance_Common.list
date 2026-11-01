@@ -14,6 +14,17 @@
 # "*.brand.*" any host containing ".brand.", so lookalikes such as brand.attacker.com
 # also match. It only routes traffic via the policy, but it is not a strict ownership check.
 # Wildcards are kept for brands whose country TLDs you want covered.
+#
+# ── Region-specific card migrations (2026-10-31) ──────────────────────────────
+# Exchanges with cards ONLY available in specific regions have been split out:
+#   Finance_SG.list  → OKX (SG Visa Platinum), Crypto.com (SG Visa, earliest market)
+#   Finance_TW.list  → Bitget (APAC Visa), MEXC (APAC Visa)
+#   Finance_UK.list  → Coinbase (UK Visa), Kraken (UK/EEA Mastercard),
+#                       Bybit (UK Mastercard), Bitget (UK/EEA Mastercard),
+#                       Crypto.com (UK Visa, GBP)
+# Rules for those exchanges are REMOVED from this file to avoid duplication.
+# ──────────────────────────────────────────────────────────────────────────────
+
 
 # ============================================================
 # Binance
@@ -48,117 +59,62 @@ DOMAIN-SUFFIX,binancefuture.com
 #DOMAIN-SUFFIX,binancepay.com
 
 # ============================================================
-# Bitget
+# Bitget  → MIGRATED to Finance_TW.list (APAC Visa) and Finance_UK.list (UK/EEA Mastercard)
 # ============================================================
-# bitget.com / .site / .cloud ...
-DOMAIN-WILDCARD,bitget.*
-DOMAIN-WILDCARD,*.bitget.*
-# [indirect] loaded by Bitget's own site
-DOMAIN-SUFFIX,bitgetapp.com
-# [indirect] static assets
-DOMAIN-SUFFIX,bgstatic.com
-# [indirect] static assets
-DOMAIN-SUFFIX,bgbstatic.com
-# UNVERIFIED:
-# a scan site flagged brand mismatch
+# UNVERIFIED (kept for reference):
 #DOMAIN-SUFFIX,bitgetapps.com
 #DOMAIN-SUFFIX,bguser.com
 #DOMAIN-SUFFIX,btsgtm.com
 
 # ============================================================
-# Bybit
+# Bybit  → MIGRATED to Finance_UK.list (UK Mastercard)
 # ============================================================
-# bybit.com / .io / .biz / .cloud / .tr
-DOMAIN-WILDCARD,bybit.*
-DOMAIN-WILDCARD,*.bybit.*
-# [official] api.bytick.com in Bybit API docs
-DOMAIN-SUFFIX,bytick.com
-# [community] + loaded by Bybit site
-DOMAIN-SUFFIX,bybitglobal.com
-# [community] + loaded by Bybit site
-DOMAIN-SUFFIX,bybit-global.com
-# [community] + loaded by Bybit site
-DOMAIN-SUFFIX,bycsi.com
-# [community]
-DOMAIN-SUFFIX,byapis.com
-# [community]
-DOMAIN-SUFFIX,bycbe.com
-# [community]
-DOMAIN-SUFFIX,bymj.io
-# [community]
-DOMAIN-SUFFIX,byabcde.com
-# [community]
-DOMAIN-SUFFIX,byapps.net
-# [community]
-DOMAIN-SUFFIX,byd3c3.com
-# [community]
-DOMAIN-SUFFIX,bybdc6.com
-# UNVERIFIED:
+# UNVERIFIED (kept for reference):
 #DOMAIN-SUFFIX,bybitwallet.com
 #DOMAIN-SUFFIX,bybitcdn.com
 #DOMAIN-SUFFIX,bybitstorage.com
 
 # ============================================================
-# OKX
+# OKX  → MIGRATED to Finance_SG.list (SG Visa Platinum)
 # ============================================================
-# okx.com / .co / .me / .ac ...
-DOMAIN-WILDCARD,okx.*
-DOMAIN-WILDCARD,*.okx.*
-# Removed: okx.cab (no evidence of OKX ownership; a phishing database lists web3.okx.cab)
-# Note: okx.* still matches okx.cab. Replace the wildcards with explicit
-# DOMAIN-SUFFIX,okx.com if you want to exclude it.
+# Note: okx.* would also match okx.cab; use explicit DOMAIN-SUFFIX,okx.com to exclude it.
 # Related, not confirmed as OKX-owned:
-# OKCoin is a separate exchange
 #DOMAIN-SUFFIX,okcoin.com
 # UNVERIFIED:
-# legacy brand
 #DOMAIN-SUFFIX,okex.com
-# X Layer RPC; probably OKX, registrant not verified
 #DOMAIN-SUFFIX,xlayer.tech
-# OKLink explorer; OKX affiliate
 #DOMAIN-SUFFIX,oklink.com
 #DOMAIN-SUFFIX,okx-dns.com
 #DOMAIN-SUFFIX,okx-dns1.com
 #DOMAIN-SUFFIX,okx-dns2.com
 
 # ============================================================
-# Coinbase
+# Coinbase  → MIGRATED to Finance_UK.list (UK/EEA Visa)
 # ============================================================
-DOMAIN-WILDCARD,coinbase.*
-DOMAIN-WILDCARD,*.coinbase.*
-# [indirect] Netify lists it as a primary Coinbase domain
-DOMAIN-SUFFIX,cb-device-intelligence.com
-# UNVERIFIED:
+# UNVERIFIED (kept for reference):
 #DOMAIN-SUFFIX,coinbase-statics.com
 #DOMAIN-SUFFIX,cb-analytics.com
 #DOMAIN-SUFFIX,cdnbase.io
 #DOMAIN-SUFFIX,cbhq.net
-# weak hint: go.cb-w.com linked from Coinbase docs
 #DOMAIN-SUFFIX,cb-w.com
 #DOMAIN-SUFFIX,coinbasecloud.net
 #DOMAIN-SUFFIX,coinbasecloud.com
 #DOMAIN-SUFFIX,coinbaseprime.com
 #DOMAIN-SUFFIX,cbase.in
-# Base L2; broad public domain
 #DOMAIN-SUFFIX,base.org
 
 # ============================================================
-# Kraken
+# Kraken  → MIGRATED to Finance_UK.list (UK/EEA Mastercard)
 # ============================================================
-# No wildcard: kraken.* would also match kraken.tech (Octopus Energy) and kraken.io (image SaaS).
-# [official]
-DOMAIN-SUFFIX,kraken.com
-# [official] parent company
-DOMAIN-SUFFIX,payward.com
-# [indirect] Krak app, confirmed as Kraken's app by Kraken support
-DOMAIN-SUFFIX,krak.app
 # Removed: krakenflex.com (Octopus Energy), cryptowat.ch (shut down 2023)
-# UNVERIFIED:
+# UNVERIFIED (kept for reference):
 #DOMAIN-SUFFIX,krakenfx.com
 #DOMAIN-SUFFIX,kraken.onl
 
 # ============================================================
 # Gate (formerly Gate.io)
+# Card: Visa + Mastercard, 40+ countries (EEA mainly; Germany restricted)
+# No specific Loon region file for Gate; card is broad EEA but Germany excluded.
 # ============================================================
 # [official]
 DOMAIN-SUFFIX,gate.io
@@ -171,6 +127,8 @@ DOMAIN-SUFFIX,gate.com
 
 # ============================================================
 # KuCoin
+# Card: Visa (EEA), Mastercard (AU/NZ via Immersve)
+# No specific Loon region file matches cleanly; card coverage is EEA + Oceania.
 # ============================================================
 # [official]
 DOMAIN-SUFFIX,kucoin.com
@@ -183,16 +141,15 @@ DOMAIN-SUFFIX,kucoin.cc
 #DOMAIN-SUFFIX,kucoin.plus
 
 # ============================================================
-# MEXC
+# MEXC  → MIGRATED to Finance_TW.list (APAC Visa includes TW)
 # ============================================================
-DOMAIN-SUFFIX,mexc.com
-# [indirect] scan site lists MEXC as operator
-DOMAIN-SUFFIX,mexc.co
-# UNVERIFIED:
+# UNVERIFIED (kept for reference):
 #DOMAIN-SUFFIX,mexcm.com
 
 # ============================================================
 # HTX (formerly Huobi)
+# Card: limited Visa (APAC: VN, PH, TH...) + limited Mastercard (UK, PL)
+# Platform is restricted in EU/UK/HK/CN. VN partial support noted.
 # ============================================================
 # [official]
 DOMAIN-SUFFIX,htx.com
@@ -206,10 +163,9 @@ DOMAIN-SUFFIX,hbg.com
 #DOMAIN-SUFFIX,huobi.global
 
 # ============================================================
-# Crypto.com
+# Crypto.com  → MIGRATED to Finance_SG.list (SG Visa) and Finance_UK.list (UK Visa)
 # ============================================================
-DOMAIN-SUFFIX,crypto.com
-# UNVERIFIED:
+# UNVERIFIED (kept for reference):
 #DOMAIN-SUFFIX,cryptocom-cdn.com
 
 # ============================================================

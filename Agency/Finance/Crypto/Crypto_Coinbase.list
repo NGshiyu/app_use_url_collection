@@ -1,0 +1,27 @@
+# Coinbase rules for Loon
+# Policy group: Crypto_Coinbase = select, 英国时延优选, 德国时延优选, 美国时延优选
+# Card basis (checked 2026-10-31):
+#   UK / EU -> Coinbase Card (EU/UK Debit), Visa
+#   US      -> Coinbase Card, Visa, issued by Pathward N.A., all US residents except Hawaii (help.coinbase.com)
+#   EU/UK list (help.coinbase.com): 30 EEA countries incl. Germany + UK
+# Not offered in: SG, TW, JP, HK, VN, TR, AE, MY, NG, UA, PK.
+# Requires Loon build 1008+ for DOMAIN-WILDCARD.
+#
+# NOTE: coinbase.* also matches lookalikes such as coinbase.attacker.com (policy routing only).
+
+DOMAIN-WILDCARD,coinbase.*
+DOMAIN-WILDCARD,*.coinbase.*
+# [indirect] Netify lists it as a primary Coinbase domain
+DOMAIN-SUFFIX,cb-device-intelligence.com
+
+# UNVERIFIED:
+#DOMAIN-SUFFIX,coinbase-statics.com
+#DOMAIN-SUFFIX,cb-analytics.com
+#DOMAIN-SUFFIX,cdnbase.io
+#DOMAIN-SUFFIX,cbhq.net
+#DOMAIN-SUFFIX,cb-w.com
+#DOMAIN-SUFFIX,coinbasecloud.net
+#DOMAIN-SUFFIX,coinbasecloud.com
+#DOMAIN-SUFFIX,coinbaseprime.com
+#DOMAIN-SUFFIX,cbase.in
+#DOMAIN-SUFFIX,base.org

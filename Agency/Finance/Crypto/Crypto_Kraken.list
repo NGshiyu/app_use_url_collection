@@ -1,0 +1,18 @@
+# Kraken rules for Loon
+# Policy group: Crypto_Kraken = select, 英国时延优选, 德国时延优选, 美国时延优选
+# Card basis (re-checked 2026-11-01, support.kraken.com 2026-10-08 / support.krak.app 2026-10-14):
+#   UK + EEA -> Krak Card, Mastercard (Monavate / FCA-authorized issuer)
+#   US       -> Krak Card, Visa, issued by Lead Bank via Stripe Issuing
+# Not offered in: SG, TW, JP, HK, VN, TR, AE, MY, NG, UA, PK.
+
+# [official]
+DOMAIN-SUFFIX,kraken.com
+# [official] parent company
+DOMAIN-SUFFIX,payward.com
+# [indirect] Krak app, confirmed as Kraken's app by Kraken support
+DOMAIN-SUFFIX,krak.app
+
+# Removed: krakenflex.com (Octopus Energy), cryptowat.ch (shut down 2023)
+# UNVERIFIED:
+#DOMAIN-SUFFIX,krakenfx.com
+#DOMAIN-SUFFIX,kraken.onl

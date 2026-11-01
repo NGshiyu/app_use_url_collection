@@ -1,0 +1,24 @@
+# Bitget rules for Loon
+# Policy group: Crypto_Bitget = select, 台湾时延优选, 日本时延优选, 英国时延优选, 德国时延优选, 越南时延优选, 马来西亚时延优选, 巴基斯坦时延优选
+# Card basis (re-checked 2026-11-01): Bitget official support article "What Is the Bitget Wallet Card and How Do I Apply?"
+#   (bitget.com/support/articles/12560603890043, 2026-07-31): card applications are now handled in the Bitget Wallet app.
+#   Visa or Mastercard by region. Eligible: EEA + UK; Argentina, Brazil, Chile, Colombia, Ecuador, El Salvador,
+#   Guatemala, Mexico, Panama, Peru; South Korea, Japan, Vietnam, Malaysia, Taiwan, Australia, Thailand,
+#   Philippines, Bangladesh, Pakistan; South Africa.
+# Not listed: Singapore, Hong Kong, US, Turkey, UAE, Nigeria, Ukraine.
+# Bitget Wallet's web domain web3.bitget.com is covered by *.bitget.* below.
+# Requires Loon build 1008+ for DOMAIN-WILDCARD.
+
+DOMAIN-WILDCARD,bitget.*
+DOMAIN-WILDCARD,*.bitget.*
+# [indirect] loaded by Bitget's own site
+DOMAIN-SUFFIX,bitgetapp.com
+# [indirect] static assets
+DOMAIN-SUFFIX,bgstatic.com
+# [indirect] static assets
+DOMAIN-SUFFIX,bgbstatic.com
+# UNVERIFIED:
+#DOMAIN-SUFFIX,bitgetapps.com
+#DOMAIN-SUFFIX,bguser.com
+#DOMAIN-SUFFIX,btsgtm.com
+

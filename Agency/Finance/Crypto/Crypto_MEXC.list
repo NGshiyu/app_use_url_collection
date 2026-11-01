@@ -1,0 +1,18 @@
+# MEXC rules for Loon
+# Policy group: Crypto_MEXC = select, 台湾时延优选, 越南时延优选, 阿联酋时延优选, 尼日利亚时延优选, 巴基斯坦时延优选
+# Card basis (re-checked 2026-11-01):
+#   MEXC Global Card (Visa Platinum) -> country list shown in the MEXC app's card page (seen by you 2026-11-01),
+#     includes Taiwan, Vietnam, Philippines, Thailand, UAE, Nigeria, Pakistan, Switzerland and ~140 others.
+#   MEXC Card (APAC, Visa) -> Taiwan, Philippines, Thailand, Vietnam (MEXC official article 2026-10-29).
+#   Restricted per MEXC (2026-10-29): Hong Kong, US, all EEA (Germany), Turkey, Ukraine, China, India, Indonesia...
+#   Not on the in-app list: Singapore, Japan, UK, Malaysia.
+#   (MEXC x ether.fi credit card is applied for in the ether.fi app, so it does not decide MEXC routing.)
+
+DOMAIN-SUFFIX,mexc.com
+# [indirect] scan site lists MEXC as operator
+DOMAIN-SUFFIX,mexc.co
+
+# UNVERIFIED:
+#DOMAIN-SUFFIX,mexcm.com
+# seen as a redirect domain in a third-party country list, not confirmed
+#DOMAIN-SUFFIX,mexc.fm

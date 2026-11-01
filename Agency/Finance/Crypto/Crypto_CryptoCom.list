@@ -1,0 +1,12 @@
+# Crypto.com rules for Loon
+# Policy group: Crypto_CryptoCom = select, 新国时延优选, 英国时延优选, 德国时延优选, 美国时延优选
+# Card basis (re-checked 2026-11-01, help.crypto.com): Visa card shipping in Singapore (since 2018),
+#   30 European countries incl. Germany + UK + Switzerland (article 2026-07-20), US (rolling out),
+#   plus Canada, Australia, Brazil (no matching policy group in myLoon4Mac.conf at the moment).
+# Not offered in: TW, JP, HK, VN, TR, AE, MY, NG, UA, PK (Nigeria and Pakistan confirmed not available).
+# A domain can only go to one policy, so choose the region you hold the card in via Crypto_CryptoCom.
+
+DOMAIN-SUFFIX,crypto.com
+
+# UNVERIFIED:
+#DOMAIN-SUFFIX,cryptocom-cdn.com

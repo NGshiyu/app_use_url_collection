@@ -1,0 +1,94 @@
+# Crypto Exchange Domain Rules for Loon (Common, no card-region binding)
+# Checked 2026-10-31 against public sources (official help pages/docs, v2fly, blackmatrix7, scan sites).
+# Evidence labels used below:
+#   [official] found on the exchange's own site/docs/announcements
+#   [community] listed consistently by v2fly / blackmatrix7 (not official proof)
+#   [indirect] seen loaded/linked by the exchange's own site, or third-party scan data
+# Anything with no evidence found is kept in a commented "UNVERIFIED" block per exchange.
+#
+# Requires Loon build 1008+ for DOMAIN-WILDCARD.
+# The policy is not part of the rules; it is set where this rule set is referenced.
+#
+# Exchanges whose card is tied to specific regions have their own files
+# (one file + one Crypto_* select group each, see myLoon4Mac.conf [Proxy Group] Crypto_*):
+#   Crypto_OKX.list  Crypto_CryptoCom.list  Crypto_Coinbase.list  Crypto_Kraken.list
+#   Crypto_Bybit.list  Crypto_KuCoin.list  Crypto_MEXC.list  Crypto_Bitget.list
+# Do NOT repeat their domains here: the first matching rule wins, a duplicate here would shadow them.
+#
+# NOTE on wildcards: "brand.*" matches any host that STARTS with "brand." and
+# "*.brand.*" any host containing ".brand.", so lookalikes such as brand.attacker.com
+# also match. It only routes traffic via the policy, but it is not a strict ownership check.
+
+# ============================================================
+# Binance
+# Card: original Visa EEA card closed 2023-12-20. 2026 press reports a Mastercard relaunch in Brazil, CIS and
+# some African markets, but Binance publishes no country list and none was confirmed for your regions.
+# ============================================================
+DOMAIN-WILDCARD,binance.*
+DOMAIN-WILDCARD,*.binance.*
+# [community] Chinese mirror domains
+DOMAIN-WILDCARD,binancezh.*
+DOMAIN-WILDCARD,*.binancezh.*
+# [community] static assets / CDN
+DOMAIN-SUFFIX,bnbstatic.com
+# [community]
+DOMAIN-SUFFIX,bntrace.com
+# [community] app API
+DOMAIN-SUFFIX,bsappapi.com
+# [community] exchange SaaS backend
+DOMAIN-SUFFIX,saasexch.com
+# [community]
+DOMAIN-SUFFIX,saasexch.cc
+# [community]
+DOMAIN-SUFFIX,binanceapi.com
+# [community]
+DOMAIN-SUFFIX,binancecnt.com
+# [community] blackmatrix7
+DOMAIN-SUFFIX,binancefuture.com
+# Related but NOT owned by Binance (enable only if you use them):
+# BNB Chain: community-driven, listed by v2fly under binance
+#DOMAIN-SUFFIX,bnbchain.org
+# Removed: bsc.news (independent media), trustwallet.com (no longer Binance-owned since 2025-05-15)
+# UNVERIFIED:
+# docs use pay.binance.com / merchant.binance.com
+#DOMAIN-SUFFIX,binancepay.com
+
+# ============================================================
+# Gate (formerly Gate.io)
+# Card: Gate's FAQ (2026-03-03) publishes no country list (eligibility shown only in the application flow).
+# Gate-Visa rollout to 40+ markets announced 2026-10-08, list not published. Gate US runs a separate US card.
+# Move to its own file once the list is published and it matches one of your regions.
+# ============================================================
+# [official]
+DOMAIN-SUFFIX,gate.io
+# [official] new main domain since 2025-05-19
+DOMAIN-SUFFIX,gate.com
+# UNVERIFIED:
+#DOMAIN-SUFFIX,gateio.live
+#DOMAIN-SUFFIX,gatedata.org
+#DOMAIN-SUFFIX,gatecn.io
+
+# ============================================================
+# HTX (formerly Huobi)
+# Card: no evidence of a current Visa/Mastercard card program found.
+# ============================================================
+# [official]
+DOMAIN-SUFFIX,htx.com
+# [official] legacy domain, acquired by Huobi in 2013
+DOMAIN-SUFFIX,huobi.com
+# Wikipedia lists www.hbg.com as the exchange site
+DOMAIN-SUFFIX,hbg.com
+# UNVERIFIED:
+#DOMAIN-SUFFIX,hbfile.net
+# mentioned in a review, not confirmed
+#DOMAIN-SUFFIX,huobi.global
+
+# ============================================================
+# Market data / tool sites (optional, not exchanges)
+# ============================================================
+#DOMAIN-SUFFIX,coingecko.com
+#DOMAIN-SUFFIX,coinmarketcap.com
+#DOMAIN-SUFFIX,tradingview.com
+#DOMAIN-SUFFIX,dexscreener.com
+#DOMAIN-SUFFIX,etherscan.io
+#DOMAIN-SUFFIX,bscscan.com
