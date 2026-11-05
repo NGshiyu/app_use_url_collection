@@ -62,3 +62,6 @@ DOMAIN-SUFFIX,zhipin.com
 
 # AMAP
 DOMAIN-SUFFIX,amap.com
+
+# SNTP
+DOMMAIN-KEYWORD,sntp
