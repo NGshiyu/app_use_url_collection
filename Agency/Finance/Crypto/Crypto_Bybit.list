@@ -5,10 +5,14 @@
 #   plus Switzerland, Brazil, Mexico, Argentina and others (no matching policy group at the moment).
 # Not supported (per the same page): Singapore, Japan, US, Canada, China, Vietnam, Australia, India, Philippines.
 #   Nigeria and Pakistan are not issued cards either.
-# Requires Loon build 1008+ for DOMAIN-WILDCARD.
+# Wildcard lines replaced with explicit DOMAIN-SUFFIX: Loon docs only document a leading *
+# for DOMAIN-WILDCARD (e.g. *.example.com). TLDs sourced from v2fly domain-list-community/data/bybit.
 
-DOMAIN-WILDCARD,bybit.*
-DOMAIN-WILDCARD,*.bybit.*
+DOMAIN-SUFFIX,bybit.com
+# [community] v2fly
+DOMAIN-SUFFIX,bybit.biz
+# [community] v2fly
+DOMAIN-SUFFIX,bybit.cloud
 # [official] api.bytick.com in Bybit API docs
 DOMAIN-SUFFIX,bytick.com
 # [community] + loaded by Bybit site

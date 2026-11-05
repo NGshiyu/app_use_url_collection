@@ -1,8 +1,10 @@
 # HK路由
 
-# 致富证券
-DOMAIN-SUFFIX,cheifgroup.com
-DOMAIN-SUFFIX,cheifgroup.com.*
+# 致富证券（Chief Securities；官方域名 chiefgroup.com.hk / chiefgroup.com / chieftrade.com）
+# 旧规则拼写错误（cheifgroup）且后缀带 * 无法匹配，2026-11-05 修正。
+DOMAIN-SUFFIX,chiefgroup.com
+DOMAIN-SUFFIX,chiefgroup.com.hk
+DOMAIN-SUFFIX,chieftrade.com
 
 # Mastodon
 DOMAIN-SUFFIX,mastodon.com

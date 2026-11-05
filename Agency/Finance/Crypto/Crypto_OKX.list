@@ -8,13 +8,15 @@
 #   South Asia: Pakistan -> launched 2026-07-22                                 okx.com/en-eu/learn/okx-crypto-card-south-asia
 #   Also Brazil, Australia (no matching policy group enabled).
 # Not offered / restricted: UK, HK, JP, MY (OKX restricted list), TW, VN, TR, AE, UA (no official card page found).
-# Requires Loon build 1008+ for DOMAIN-WILDCARD.
-#
-# NOTE: okx.* also matches okx.cab and lookalikes such as okx.attacker.com.
-# It only picks the policy, it is not an ownership check. Use DOMAIN-SUFFIX,okx.com if you want it strict.
+# Wildcard lines replaced with explicit DOMAIN-SUFFIX: Loon docs only document a leading *
+# for DOMAIN-WILDCARD (e.g. *.example.com). TLDs sourced from v2fly domain-list-community/data/okx.
 
-DOMAIN-WILDCARD,okx.*
-DOMAIN-WILDCARD,*.okx.*
+DOMAIN-SUFFIX,okx.com
+DOMAIN-SUFFIX,okx.ac
+DOMAIN-SUFFIX,okx.cab
+DOMAIN-SUFFIX,okx-dns.com
+DOMAIN-SUFFIX,okx-dns1.com
+DOMAIN-SUFFIX,okx-dns2.com
 
 # Related, not confirmed as OKX-owned:
 #DOMAIN-SUFFIX,okcoin.com

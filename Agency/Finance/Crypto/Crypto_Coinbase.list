@@ -5,12 +5,11 @@
 #   US      -> Coinbase Card, Visa, issued by Pathward N.A., all US residents except Hawaii (help.coinbase.com)
 #   EU/UK list (help.coinbase.com): 30 EEA countries incl. Germany + UK
 # Not offered in: SG, TW, JP, HK, VN, TR, AE, MY, NG, UA, PK.
-# Requires Loon build 1008+ for DOMAIN-WILDCARD.
-#
-# NOTE: coinbase.* also matches lookalikes such as coinbase.attacker.com (policy routing only).
+# Wildcard lines replaced with DOMAIN-SUFFIX,coinbase.com: Loon docs only document a leading *
+# for DOMAIN-WILDCARD (e.g. *.example.com), and *.coinbase.* would have matched lookalikes
+# such as coinbase.attacker.com (policy routing only).
 
-DOMAIN-WILDCARD,coinbase.*
-DOMAIN-WILDCARD,*.coinbase.*
+DOMAIN-SUFFIX,coinbase.com
 # [indirect] Netify lists it as a primary Coinbase domain
 DOMAIN-SUFFIX,cb-device-intelligence.com
 

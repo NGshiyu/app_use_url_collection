@@ -6,11 +6,13 @@
 #   Guatemala, Mexico, Panama, Peru; South Korea, Japan, Vietnam, Malaysia, Taiwan, Australia, Thailand,
 #   Philippines, Bangladesh, Pakistan; South Africa.
 # Not listed: Singapore, Hong Kong, US, Turkey, UAE, Nigeria, Ukraine.
-# Bitget Wallet's web domain web3.bitget.com is covered by *.bitget.* below.
-# Requires Loon build 1008+ for DOMAIN-WILDCARD.
+# Bitget Wallet's web domain web3.bitget.com is covered by DOMAIN-SUFFIX,bitget.com below.
+# Wildcard lines replaced: Loon docs only document a leading * for DOMAIN-WILDCARD, and Bitget's
+# official phishing notice states "we have only one official domain: www.bitget.com".
 
-DOMAIN-WILDCARD,bitget.*
-DOMAIN-WILDCARD,*.bitget.*
+DOMAIN-SUFFIX,bitget.com
+# [official] Bitget support center runs on bitget.org (linked from official phishing-notice articles)
+DOMAIN-SUFFIX,bitget.org
 # [indirect] loaded by Bitget's own site
 DOMAIN-SUFFIX,bitgetapp.com
 # [indirect] static assets
