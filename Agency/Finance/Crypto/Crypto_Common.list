@@ -6,7 +6,6 @@
 #   [indirect] seen loaded/linked by the exchange's own site, or third-party scan data
 # Anything with no evidence found is kept in a commented "UNVERIFIED" block per exchange.
 #
-# Requires Loon build 1008+ for DOMAIN-WILDCARD.
 # The policy is not part of the rules; it is set where this rule set is referenced.
 #
 # Exchanges whose card is tied to specific regions have their own files
@@ -15,20 +14,45 @@
 #   Crypto_Bybit.list  Crypto_KuCoin.list  Crypto_MEXC.list  Crypto_Bitget.list
 # Do NOT repeat their domains here: the first matching rule wins, a duplicate here would shadow them.
 #
-# NOTE on wildcards: "brand.*" matches any host that STARTS with "brand." and
-# "*.brand.*" any host containing ".brand.", so lookalikes such as brand.attacker.com
-# also match. It only routes traffic via the policy, but it is not a strict ownership check.
+# NOTE on wildcards: Loon docs only document DOMAIN-WILDCARD with a leading * (e.g.
+# *.example.com), not trailing/middle * (e.g. "brand.*" / "*.brand.*"), so those lines
+# have been replaced with explicit DOMAIN-SUFFIX TLD lists (sourced from v2fly/blackmatrix7).
+# This is also stricter: a wildcard like *.brand.* would have matched lookalikes such as
+# brand.attacker.com. Rules only pick the policy; they are not an ownership check.
 
 # ============================================================
 # Binance
 # Card: original Visa EEA card closed 2023-12-20. 2026 press reports a Mastercard relaunch in Brazil, CIS and
 # some African markets, but Binance publishes no country list and none was confirmed for your regions.
 # ============================================================
-DOMAIN-WILDCARD,binance.*
-DOMAIN-WILDCARD,*.binance.*
-# [community] Chinese mirror domains
-DOMAIN-WILDCARD,binancezh.*
-DOMAIN-WILDCARD,*.binancezh.*
+DOMAIN-SUFFIX,binance.com
+# [community] v2fly domain-list binance TLDs (replaces DOMAIN-WILDCARD,binance.* / *.binance.*)
+DOMAIN-SUFFIX,binance.cc
+DOMAIN-SUFFIX,binance.charity
+DOMAIN-SUFFIX,binance.cloud
+DOMAIN-SUFFIX,binance.co
+DOMAIN-SUFFIX,binance.info
+DOMAIN-SUFFIX,binance.me
+DOMAIN-SUFFIX,binance.net
+DOMAIN-SUFFIX,binance.org
+DOMAIN-SUFFIX,binance.us
+DOMAIN-SUFFIX,binance.vision
+# [community] Chinese mirror domains (replaces DOMAIN-WILDCARD,binancezh.* / *.binancezh.*)
+DOMAIN-SUFFIX,binancezh.be
+DOMAIN-SUFFIX,binancezh.biz
+DOMAIN-SUFFIX,binancezh.cc
+DOMAIN-SUFFIX,binancezh.co
+DOMAIN-SUFFIX,binancezh.com
+DOMAIN-SUFFIX,binancezh.info
+DOMAIN-SUFFIX,binancezh.ink
+DOMAIN-SUFFIX,binancezh.kim
+DOMAIN-SUFFIX,binancezh.link
+DOMAIN-SUFFIX,binancezh.live
+DOMAIN-SUFFIX,binancezh.mobi
+DOMAIN-SUFFIX,binancezh.net
+DOMAIN-SUFFIX,binancezh.pro
+DOMAIN-SUFFIX,binancezh.sh
+DOMAIN-SUFFIX,binancezh.top
 # [community] static assets / CDN
 DOMAIN-SUFFIX,bnbstatic.com
 # [community]
@@ -51,7 +75,7 @@ DOMAIN-SUFFIX,binancefuture.com
 # Removed: bsc.news (independent media), trustwallet.com (no longer Binance-owned since 2025-05-15)
 # UNVERIFIED:
 # docs use pay.binance.com / merchant.binance.com
-#DOMAIN-SUFFIX,binancepay.com
+DOMAIN-SUFFIX,binancepay.com
 
 # ============================================================
 # Gate (formerly Gate.io)
