@@ -61,3 +61,7 @@ DOMAIN,mmp.digimon.ink,DIRECT
 
 # 一之濑琴美
 DOMAIN-SUFFIX,ichinosekotomi.com
+
+
+# SNTP
+DOMAIN-KEYWORD,array2026
